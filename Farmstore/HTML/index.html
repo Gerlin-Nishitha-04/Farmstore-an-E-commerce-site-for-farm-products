@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <div class="header-content">
+        <div class="logo">
+            <a href="index.html">FarmStore</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for products...">
+            <button onclick="searchProducts()">Search</button>
+        </div>
+        <div class="account-links">
+            <a href="index.html" id="home-link">Home</a>
+            <a href="cart.html" id="cart-link">Cart</a>
+            <a href="contact.html" id="contact">Contact</a>
+            <a href="login_new.html" id="login">Sign up/Login</a>
+        </div>
+    </div>
+</header>
+    <section id="home" class="hero">
+        <h1>Welcome to Farm Store</h1>
+        <p>Your favorite place to shop online.</p>
+    </section>
+
+    <section id="category" class="category-list">
+        <h2>Category</h2>
+        <div id="category-container">
+            <!-- First Category: Rice -->
+            <div class="category-item">
+                <div class="category-box">
+                    <img src="rice.jpg" alt="Rice Image" class="category-image">
+                    <button onclick="window.location.href='rice.html'" class="category-button">Rice</button>
+                </div>
+            </div>
+            <!-- Second Category: Cereals -->
+            <div class="category-item">
+                <div class="category-box">
+                    <img src="fruits.jpg" alt="Fruits" class="category-image">
+                    <button onclick="window.location.href='fruits.html'" class="category-button">Fruits</button>
+                </div>
+            </div>
+            <div class="category-item">
+                <div class="category-box">
+                    <img src="cereals.jpg" alt="Cereals" class="category-image">
+                    <button onclick="window.location.href='cereals.html'" class="category-button">Cereals</button>
+                </div>
+            </div>
+            
+            
+            <!-- Fourth Category: Vegetables -->
+            <div class="category-item">
+                <div class="category-box">
+                    <img src="vegetables.jpg" alt="Vegetables" class="category-image">
+                    <button onclick="window.location.href='vegetables.html'" class="category-button">Vegetables</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer>
+        <p>&copy; 2024 FarmStore</p>
+    </footer>
+
+    <script src="farmer.js"></script>
+   <script> // Example product data (this could be loaded from a server or a file)
+const products = [
+    { name: 'Rice', url: 'rice.html' },
+    { name: 'Basmati', url: 'rice.html' },
+    { name: 'Jeeraga Sambha', url: 'rice.html' },
+    { name: 'Ponni', url: 'rice.html' },
+    { name: 'Fruits', url: 'fruits.html' },
+    { name: 'Apple', url: 'fruits.html' },
+    { name: 'Banana', url: 'fruits.html' },
+    { name: 'Grapes', url: 'fruits.html' },
+    { name: 'Cereals', url: 'cereals.html' },
+    { name: 'Barley', url: 'cereals.html' },
+    { name: 'Maize', url: 'cereals.html' },
+    { name: 'Oats', url: 'cereals.html' },
+    { name: 'Vegetables', url: 'vegetables.html' },
+    { name: 'Tomato', url: 'vegetables.html' },
+    { name: 'Potato', url: 'vegetables.html' },
+    { name: 'Coconut', url: 'vegetables.html' },
+    { name: 'Onion', url: 'vegetables.html' }
+];
+
+function searchProducts() {
+    const query = document.getElementById('search-input').value.toLowerCase();
+    
+    // Check if query matches any product name
+    const matchedProduct = products.find(product => product.name.toLowerCase() === query);
+    
+    if (matchedProduct) {
+        // Redirect to the product page if a match is found
+        window.location.href = matchedProduct.url;
+    } else {
+        // Handle no match found (optional)
+        alert('Product not found. Please try a different search term.');
+    }
+}
+</script>
+</body>
+</html>

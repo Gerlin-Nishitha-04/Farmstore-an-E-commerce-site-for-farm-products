@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - FarmStore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <a href="index.html">FarmStore</a>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search for products...">
+                <button onclick="searchProducts()">Search</button>
+            </div>
+            <div class="account-links">
+                <a href="cart.html" id="cart-link">Cart (0)</a>
+                <a href="contact.html" id="contact">Contact</a>
+                <a href="login_new.html" id="login">Sign up/Login</a>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section id="products" class="product-list">
+        <h2>Products</h2>
+        <div id="product-container">
+            <!-- Product items will be inserted here -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Online Store</p>
+    </footer>
+
+    <script src="farmer.js"></script>
+</body>
+</html>

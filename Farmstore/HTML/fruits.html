@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmStore</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <header>
+    <div class="header-container">
+        <div class="logo">FarmStore</div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for products...">
+            <button onclick="searchProducts()">Search</button>
+        </div>
+        <div class="account-links">
+            <a href="index.html" id="home-link">Home</a>
+            <a href="cart.html" id="cart-link">Cart</a>
+            <a href="contact.html" id="contact">Contact</a>
+            <a href="login_new.html" id="login">Sign up/Login</a>
+        </div>
+    </div>
+</header>
+
+    <main>
+        <h1>Fruits</h1>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="apple.jpg" alt="Apple">
+            </div>
+            <p>Apple</p>
+            <p>₹ 150/kg</p>
+            <div class="quantity-controls">
+                <input type="number" id="apple" value="1" min="1">
+            </div>
+            <button class="add-to-cart" onclick="addToCart('Apple', 150, 'apple.jpg')">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="banana.jpg" alt="Banana">
+            </div>
+            <p>Banana</p>
+            <p>₹ 130/kg</p>
+            <div class="quantity-controls">
+                <input type="number" id="banana" value="1" min="1">
+            </div>
+            <button class="add-to-cart" onclick="addToCart('Banana', 130, 'banana.jpg')">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="grapes.jpg" alt="Grapes">
+            </div>
+            <p>Grapes</p>
+            <p>₹ 105/kg</p>
+            <div class="quantity-controls">
+                <input type="number" id="grapes" value="1" min="1">
+            </div>
+            <button class="add-to-cart" onclick="addToCart('Grapes', 105, 'grapes.jpg')">Add to Cart</button>
+        </div>
+    </main>
+
+    <script>
+        function addToCart(name, price, image) {
+            const quantity = parseInt(document.getElementById(name.toLowerCase()).value);
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Check if the item already exists in the cart
+            const existingItem = cart.find(item => item.name === name);
+
+            if (existingItem) {
+                // Update the quantity if the item already exists
+                existingItem.quantity += quantity;
+            } else {
+                // Add new item to the cart
+                cart.push({ name, price, image, quantity });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            alert(`${name} has been added to the cart!`);
+        }
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+            document.getElementById('cart-count').innerText = totalCount;
+        }
+
+        document.addEventListener('DOMContentLoaded', updateCartCount);
+    </script>
+    <script> // Example product data (this could be loaded from a server or a file)
+const products = [
+    { name: 'Rice', url: 'rice.html' },
+    { name: 'Basmati', url: 'rice.html' },
+    { name: 'Jeeraga Sambha', url: 'rice.html' },
+    { name: 'Ponni', url: 'rice.html' },
+    { name: 'Fruits', url: 'fruits.html' },
+    { name: 'Apple', url: 'fruits.html' },
+    { name: 'Banana', url: 'fruits.html' },
+    { name: 'Grapes', url: 'fruits.html' },
+    { name: 'Cereals', url: 'cereals.html' },
+    { name: 'Barley', url: 'cereals.html' },
+    { name: 'Maize', url: 'cereals.html' },
+    { name: 'Oats', url: 'cereals.html' },
+    { name: 'Vegetables', url: 'vegetables.html' },
+    { name: 'Tomato', url: 'vegetables.html' },
+    { name: 'Potato', url: 'vegetables.html' },
+    { name: 'Coconut', url: 'vegetables.html' },
+    { name: 'Onion', url: 'vegetables.html' }
+];
+
+function searchProducts() {
+    const query = document.getElementById('search-input').value.toLowerCase();
+    
+    // Check if query matches any product name
+    const matchedProduct = products.find(product => product.name.toLowerCase() === query);
+    
+    if (matchedProduct) {
+        // Redirect to the product page if a match is found
+        window.location.href = matchedProduct.url;
+    } else {
+        // Handle no match found (optional)
+        alert('Product not found. Please try a different search term.');
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #dde7c7; /* Light Beige Background */
+    color: #333;
+}
+
+header {
+    background-color: #3a5a40; /* Moderate Green */
+    color: white;
+    padding: 20px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+#search-input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    width: 300px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #a3b18a; /* Bright Sun Yellow */
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+}
+
+button:hover {
+    background-color: #3a5a40;
+}
+
+.account-links a {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.account-links a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('farmerpic.jpg'); /* Replace with the path to your image */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    color: black; /* Change text color for contrast */
+    padding: 60px 20px; /* Increase padding for better visibility */
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px; /* Adjust heading size */
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 24px; /* Adjust paragraph size */
+}
+
+}
+
+
+/* Category Section */
+.category-list {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.category-list h2 {
+    font-size: 28px; /* Reduced font size */
+    color: black; /* Moderate Green */
+    text-align: center;
+    margin-bottom: 20px; /* Reduced margin */
+}
+
+#category-container {
+    display: flex;
+    justify-content: center; /* Center align categories */
+    flex-wrap: wrap;
+    gap: 15px; /* Reduced gap between items */
+}
+
+.category-item {
+    flex-basis: calc(25% - 15px); /* Adjusted for smaller items with spacing */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.category-box {
+    background-color: white;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    padding: 10px; /* Reduced padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s; /* Added transition for hover effect */
+}
+
+.category-box:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.category-image {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.category-button {
+    margin-top: 8px; /* Reduced margin */
+    padding: 8px 15px; /* Reduced padding */
+    background-color: #87CEEB; /* Soft Sky Blue */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px; /* Reduced font size */
+}
+
+.category-button:hover {
+    background-color: #70b7d6;
+}
+
+/* Footer */
+footer {
+    background-color: #4CAF50; /* Moderate Green */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column; /* Stack header content vertically */
+        align-items: center; /* Center align items */
+        text-align: center; /* Center text for better alignment */
+    }
+
+    .search-bar {
+        flex-direction: column; /* Stack search input and button vertically */
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .search-bar input[type="text"] {
+        margin-right: 0;
+        margin-bottom: 5px;
+        width: 100%;
+        max-width: none;
+    }
+
+    .search-bar button {
+        width: 100%;
+        max-width: none;
+    }
+
+    .account-links {
+        margin-top: 10px;
+        text-align: center; /* Center align account links */
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Center the links horizontally */
+        gap: 15px; /* Add some space between links */
+    }
+
+    .nav-container {
+        display: flex;
+        justify-content: center; /* Center navigation items */
+        padding: 0;
+    }
+
+    nav ul {
+        flex-direction: row; /* Keep navigation items in a row */
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 15px; /* Add some space between items */
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    .hero {
+        padding: 30px 0; /* Reduce padding for smaller screens */
+    }
+
+    .hero h1 {
+        font-size: 28px; /* Adjust font size for mobile */
+    }
+
+    .hero p {
+        font-size: 16px; /* Adjust font size for mobile */
+    }
+
+    .category-list {
+        padding: 30px 0; /* Reduce padding for smaller screens */
+    }
+
+    .category-list h2 {
+        font-size: 24px; /* Adjust font size for mobile */
+        margin-bottom: 20px; /* Reduce margin for mobile */
+    }
+
+    #category-container {
+        flex-direction: column; /* Stack category items vertically */
+        gap: 20px; /* Reduce gap for mobile */
+    }
+
+    .category-item {
+        flex-basis: 90%; /* Make category items wider on mobile */
+    }
+
+    .category-box {
+        width: 100%; /* Full width for category box on mobile */
+        max-width: none; /* Remove max-width constraint */
+    }
+
+    .category-button {
+        font-size: 14px; /* Adjust font size for mobile */
+    }
+
+    .cart {
+        width: 90%; /* Adjust width for mobile */
+        padding: 15px; /* Reduce padding for smaller screens */
+        margin: 15px auto; /* Adjust margin for mobile */
+    }
+
+    .cart h2 {
+        font-size: 20px; /* Adjust font size for mobile */
+    }
+
+    .cart p {
+        font-size: 16px; /* Adjust font size for mobile */
+    }
+}
+
+@media (min-width: 769px) {
+    /* Restore original layout for larger screens if needed */
+    .header-content {
+        flex-direction: row; /* Align items in a row for larger screens */
+        align-items: center;
+    }
+
+    .search-bar {
+        flex-direction: row; /* Align search input and button in a row */
+    }
+
+    nav ul {
+        flex-direction: row; /* Align navigation items in a row */
+    }
+}
